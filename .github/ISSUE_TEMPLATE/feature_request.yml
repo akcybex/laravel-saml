@@ -1,0 +1,17 @@
+name: Feature request
+description: Suggest something the package could do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: The package deliberately does one flow and refuses the rest (see "What it deliberately does not do" in the README). A request that adds to what it accepts needs a reason.
+  - type: textarea
+    id: need
+    attributes:
+      label: What you need, and why
+    validations:
+      required: true
+  - type: textarea
+    id: idp
+    attributes:
+      label: The identity provider or setup that needs it

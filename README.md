@@ -1,4 +1,21 @@
-# akcybex/laravel-saml
+<!-- tc:hero -->
+<a href="https://github.com/akcybex/laravel-saml#readme"><picture><source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/saml-dark.svg"><source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/saml-light.svg"><img alt="akcybex/laravel-saml: AKCybex for Laravel SAML. Version, runtime support, size and license." src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/saml-dark.svg" width="100%"></picture></a>
+
+<p align="center">
+  <a href="https://github.com/akcybex/laravel-saml#readme">Documentation</a> &nbsp;·&nbsp;
+  <a href="https://packagist.org/packages/akcybex/laravel-saml">View on Packagist</a> &nbsp;·&nbsp;
+  <a href="https://github.com/akcybex/laravel-saml/issues/new/choose">Report a bug</a>
+</p>
+
+<h3 align="center">SAML 2.0 sign-in for Laravel, as a service provider. Strict, small and plain.</h3>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/features-saml-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/features-saml-light.svg">
+  <img alt="akcybex/laravel-saml features" src="https://raw.githubusercontent.com/tailcove/.github/main/profile/assets/packages/features-saml-dark.svg" width="100%">
+</picture>
+
+<!-- /tc:hero -->
 
 SAML 2.0 single sign-on for Laravel, as a service provider. It builds the sign-in request, publishes your metadata, and checks the answer your customer's identity provider sends back, strictly. It does one flow and refuses everything else.
 
@@ -239,3 +256,15 @@ The tests generate RSA keys and self-signed certificates with OpenSSL and sign r
 ## License
 
 MIT. See `LICENSE`.
+
+<!-- tc:footer -->
+<p align="center">
+  <a href="https://github.com/akcybex/laravel-saml#readme">Documentation</a> &nbsp;·&nbsp;
+  <a href="https://github.com/akcybex/laravel-saml/issues/new/choose">Report a bug</a> &nbsp;·&nbsp;
+  <a href="LICENSE">MIT License</a>
+</p>
+
+<p align="center">
+  <sub>Built by AKCybex.</sub>
+</p>
+<!-- /tc:footer -->

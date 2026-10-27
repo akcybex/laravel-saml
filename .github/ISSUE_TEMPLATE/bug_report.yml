@@ -1,0 +1,38 @@
+name: Bug report
+description: Something does not work as described
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste a real SAML response, certificate private key or customer data. If the problem is a security one, use the private report link instead of an issue.
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: stack
+    attributes:
+      label: PHP and Laravel versions
+      placeholder: PHP 8.4, Laravel 13
+    validations:
+      required: true
+  - type: input
+    id: idp
+    attributes:
+      label: Identity provider
+      placeholder: Okta, Entra ID, Keycloak, ...
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: The error message
+      description: The text of the SamlException, if there is one.
