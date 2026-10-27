@@ -1,5 +1,8 @@
 name: release
 
+# A pushed v* tag makes the GitHub release if there is not one already (a release written by hand, with its own notes, is left alone).
+# A tag with a prerelease part (v0.1.0-rc.1) is marked as a pre-release.
+
 on:
   push:
     tags: ['v*']
@@ -16,4 +19,17 @@ jobs:
       - name: Create the GitHub release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh release create "$GITHUB_REF_NAME" --generate-notes
+        run: |
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            echo "The release $GITHUB_REF_NAME already exists; leaving it as it is."
+            exit 0
+          fi
+
+          flags=""
+          case "$GITHUB_REF_NAME" in
+            *-*) flags="--prerelease" ;;
+          esac
+
+          # The release can be made by hand between the check and here: that is not a failure either.
+          gh release create "$GITHUB_REF_NAME" --generate-notes $flags \
+            || gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1
