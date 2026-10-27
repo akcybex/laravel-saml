@@ -405,6 +405,10 @@ it('refuses two elements that share an ID', function () {
     $this->assertRefused($response, 'same ID twice');
 });
 
+it('refuses an Assertion with no ID, even when the Response is signed', function () {
+    $this->assertRefused(Fx::response(['signing' => 'response', 'assertionId' => null]), 'no ID');
+});
+
 it('refuses a Response and an Assertion that share an ID', function () {
     $this->assertRefused(Fx::response(['responseId' => '_same', 'assertionId' => '_same']), 'same ID twice');
 });

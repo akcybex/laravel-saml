@@ -160,6 +160,11 @@ final class ResponseValidator
             throw new SamlException('The Assertion is not a direct child of the Response.');
         }
 
+        // The schema requires it, and the replay record is keyed by it: an Assertion without one would share a key with every other.
+        if ($assertions->item(0) instanceof DOMElement && $assertions->item(0)->getAttribute('ID') === '') {
+            throw new SamlException('The Assertion has no ID.');
+        }
+
         $seen = [];
 
         foreach ($xpath->query('//*[@ID]') ?: [] as $element) {
